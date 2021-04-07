@@ -8,11 +8,11 @@
 <p>Description: <%= @application.description %></p>
 <p>Application status: <%= @application.status %></p>
 <p>All pets applied for:</p>
-  <% if @list_pets.nil? %>
+  <% if @application.pets.empty? %>
     <strong><p>No pets applied for yet.</p></strong>
     <% else %>
-      <% @list_pets.each do |pet| %>
-        <%= pet.name %>
+      <% @application.pets.each do |pet| %>
+        <strong><%= pet.name %><br></strong>
     <% end %>
   <% end %><br>
 

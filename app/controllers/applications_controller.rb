@@ -9,6 +9,7 @@ class ApplicationsController < ApplicationController
 
   def update
     @application = Application.find(params[:id])
+    PetApplication.create!(application_id: @application.id, pet_id: params[:pet_id])
   end
 
   def new

@@ -54,7 +54,7 @@ RSpec.describe 'As a visitor' do
         status: "In Progress"
       )
 
-      visit "applications/#{application.id}"
+      visit "/applications/#{application.id}"
 
       expect(page).to have_content("No pets applied for yet.")
 
@@ -63,10 +63,6 @@ RSpec.describe 'As a visitor' do
 
       expect(page).to have_content("Jack")
       expect(page).to have_button("Adopt this Pet")
-
-      visit "applications/#{application.id}"
-
-
     end
   end
 end
