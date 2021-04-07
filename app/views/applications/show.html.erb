@@ -7,7 +7,14 @@
   <%= @application.zipcode %></p>
 <p>Description: <%= @application.description %></p>
 <p>Application status: <%= @application.status %></p>
-<p>All pets applied for:</p><br><br>
+<p>All pets applied for:</p>
+  <% if @list_pets.nil? %>
+    <strong><p>No pets applied for yet.</p></strong>
+    <% else %>
+      <% @list_pets.each do |pet| %>
+        <%= pet.name %>
+    <% end %>
+  <% end %><br>
 
 <h3>Add a pet to this application: </h3>
 <%= form_with url: "/applications/#{@application.id}", method: :get, local: true do |f| %>
@@ -24,5 +31,6 @@
    <% else %>
     <% @pets.each do |pet| %>
       <%= pet.name %>
+      <%= button_to "Adopt this Pet", { action: "update"}, method: :patch, params: {pet_name: pet.name, pet_id: pet.id} %>
     <% end %>
   <% end %></p>
