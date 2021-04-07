@@ -11,7 +11,6 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content("City")
       expect(page).to have_content("State")
       expect(page).to have_content("Zip code")
-      expect(page).to have_content("Why you might be a good fit for adoption")
       expect(page).to have_content("Your application status is: In Progress")
     end
   end
