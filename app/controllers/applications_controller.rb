@@ -10,7 +10,7 @@ class ApplicationsController < ApplicationController
   def update
     if params[:pet_id].present? == false
       @application = Application.find(params[:id])
-      @application.update(description: params[:description])
+      @application.update(description: params[:description], status: params[:status])
       render :show
     else
       @application = Application.find(params[:id])
