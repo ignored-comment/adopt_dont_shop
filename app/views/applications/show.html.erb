@@ -13,8 +13,14 @@
     <% else %>
       <% @application.pets.each do |pet| %>
         <strong><%= pet.name %><br></strong>
-        <h3>Submit My Application</h3>
     <% end %>
+    <h3>Submitting My Application: </h3>
+    <%= form_with url: "/applications/#{@application.id}", method: :patch, local: true do |form| %>
+      <%= form.label "why you might be a good owner for these pet(s)" %><br>
+      <%= form.text_area :description %><br>
+      <%= form.submit 'Submit New Application' %>
+    <% end %>
+
   <% end %><br>
 
 <h3>Add a pet to this application: </h3>

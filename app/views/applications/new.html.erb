@@ -9,9 +9,8 @@
   <%= form.text_field :state %><br>
   <%= form.label "zip code" %>
   <%= form.text_field :zipcode %><br>
-  <%= form.label "why you might be a good fit for adoption" %>
-  <%= form.text_area :description %><br>
 
+  <%= hidden_field_tag :description, nil %>
   <%= hidden_field_tag :status, 'In Progress' %>
   <p>Your application status is: In Progress</p>
   <%= form.submit 'Submit New Application' %>

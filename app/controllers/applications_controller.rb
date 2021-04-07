@@ -8,10 +8,15 @@ class ApplicationsController < ApplicationController
   end
 
   def update
-    @application = Application.find(params[:id])
-    PetApplication.create!(application_id: @application.id, pet_id: params[:pet_id])
-
-    render :action => "show"
+    if params[:pet_id].present? == false
+      @application = Application.find(params[:id])
+      @application.update(description: params[:description])
+      render :show
+    else
+      @application = Application.find(params[:id])
+      PetApplication.create!(application_id: @application.id, pet_id: params[:pet_id])
+      render :show
+    end
   end
 
   def new
