@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 
-  def index_shelters
+  def index
     @shelters = Shelter.alphabetically_descending_by_name
   end
 end
