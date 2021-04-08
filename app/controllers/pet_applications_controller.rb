@@ -1,6 +1,8 @@
 class PetApplicationsController < ApplicationRecord
 
-  def create
-    binding.pry
+  def index
+    @shelters = Shelter.find(params[:shelter_id])
+    @pets = @shelter.pets.display_by(params[:adoptable])
+    @adopted_pets = @shelter.pets.adopted_pets
   end
 end
