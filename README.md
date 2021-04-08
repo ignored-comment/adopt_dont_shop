@@ -211,7 +211,7 @@ SQL Only Story
 
 For this story, you should write your queries in raw sql. You can use the ActiveRecord find_by_sql method to execute raw sql queries: https://guides.rubyonrails.org/active_record_querying.html#finding-by-sql
 
-~~Admin Shelters Index~~
+<s>Admin Shelters Index</s>
 
 As a visitor
 When I visit the admin shelter index ('/admin/shelters')
