@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 
-  def index_shelters
-    @shelters = Shelter.alphabetically_descending_by_name
+  def index
+    @shelters = Shelter.shelter_join_pet_application
   end
 end
